@@ -1,27 +1,30 @@
+'''
+This is a test code
+'''
 import json
 
-# Program to check if a number is prime or not
+# Program to check if a NUMber is prime or not
 
-num = 29
+NUM = 29
 
 # To take input from the user
-#num = int(input("Enter a number: "))
+#NUM = int(input("Enter a NUMber: "))
 
-# define a flag variable
-flag = False
+# define a FLAG variable
+FLAG = False
 
-# prime numbers are greater than 1
-if num > 1:
+# prime NUMbers are greater than 1
+if NUM > 1:
     # check for factors
-    for i in range(2, num):
-        if (num % i) == 0:
-            # if factor is found, set flag to True
-            flag = True
+    for i in range(2, NUM):
+        if (NUM % i) == 0:
+            # if factor is found, set FLAG to True
+            FLAG = True
             # break out of loop
             break
 
-# check if flag is True
-if flag:
-    print(num, "is not a prime number")
+# check if FLAG is True
+if FLAG:
+    print(NUM, "is not a prime NUMber")
 else:
-    print(num, "is a prime numberss")
+    print(NUM, "is a prime numberss")
