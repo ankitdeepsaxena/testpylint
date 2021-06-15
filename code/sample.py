@@ -1,8 +1,6 @@
 '''
 This is a test code
 '''
-import json
-
 # Program to check if a NUMber is prime or not
 
 NUM = 29
