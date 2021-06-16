@@ -11,7 +11,17 @@ pipeline {
             steps {
                 sh """
                 echo 'Checkout Done'
-                pylint /var/lib/jenkins/workspace/pylint/files/*.py || exit 0
+                pip3 install pylint
+                python3 -m pylint --version
+                ls /tmp/jenkins/workspace/
+                ls /tmp/jenkins/workspace/pylint/
+                ls /tmp/jenkins/workspace/pylint/files/
+                python3 -m pylint /tmp/jenkins/workspace/pylint/files/*py || exit 0
+                #pylint --output-format=colorized
+                #pylint --output-format=parseable --reports=no module > pylint.log || echo "pylint exited with")
+                echo 'pylint command 1 executed'
+                echo 'Checkout Done'
+                #pylint /var/lib/jenkins/workspace/pylint/files/*.py || exit 0
                 #pylint --output-format=colorized
                 #pylint --output-format=parseable --reports=no module > pylint.log || echo "pylint exited with")
                 echo 'pylint command 1 executed'
