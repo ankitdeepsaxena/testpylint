@@ -3,6 +3,11 @@ This is a test code
 '''
 # Program to check if a NUMber is prime or not
 
+def sum():
+    a=20
+    b=30
+    return a+b
+
 NUM = 29
 
 # To take input from the user
