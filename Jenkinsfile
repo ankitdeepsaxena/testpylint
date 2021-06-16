@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Git Checkout') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ankitdeepsaxena/testpylint.git']]])
             }
         }
-        stage('Pre-build'){
+        stage('Pylint'){
             steps {
                 sh """
                 echo 'Checkout Done'
@@ -25,7 +25,7 @@ pipeline {
             pip3 install coverage
             python3 -m pytest /var/lib/jenkins/workspace/pylint/tests/*
             python3 -m coverage run -m pytest /var/lib/jenkins/workspace/pylint/tests/test_*.py
-            python3 -m coverage report -m
+            python3 -m coverage report -m --source=/var/lib/jenkins/workspace/pylint/tests/
             """
             }
         }
