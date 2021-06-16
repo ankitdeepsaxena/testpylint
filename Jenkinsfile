@@ -11,6 +11,12 @@ pipeline {
             steps {
                 sh """
                 echo 'Checkout Done'
+                sudo apt-get update
+                sudo apt-get install python3-venv python3-pip
+                python3 -m venv ~/jenkins_env
+                source ~/jenkins_env/bin/activate
+                pip install --upgrade pip
+                pip install pylint
                 pylint /var/lib/jenkins/workspace/pylint@script/files/*.py || exit 0
                 #pylint --output-format=colorized
                 #pylint --output-format=parseable --reports=no module > pylint.log || echo "pylint exited with")
