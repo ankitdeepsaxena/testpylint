@@ -6,7 +6,7 @@ This is a test code
 NUM = 29
 
 # To take input from the user
-#NUM = int(input("Enter a NUMber: "))
+# NUM = int(input("Enter a NUMber: "))
 
 # define a FLAG variable
 FLAG = False
