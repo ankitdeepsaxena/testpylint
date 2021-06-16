@@ -15,7 +15,7 @@ pipeline {
                 source ~/jenkins_env/bin/activate
                 pip install --upgrade pip
                 pip install pylint
-                pylint /var/lib/jenkins/workspace/pylint@script/files/*.py || exit 0
+                python -m pylint /var/lib/jenkins/workspace/pylint@script/files/*.py || exit 0
                 #pylint --output-format=colorized
                 #pylint --output-format=parseable --reports=no module > pylint.log || echo "pylint exited with")
                 echo 'pylint command 1 executed'
