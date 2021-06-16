@@ -26,8 +26,8 @@ cache-size=500
 
 # List of plugins (as comma separated values of python modules names) to load,
 # usually to register additional checkers.
-load-plugins=
-
+#load-plugins=
+load-plugins=pylint.extensions.docparams,pylint.extensions.docstyle,pylint.extensions.empty_comment,pylint.extensions.typing,pylint.extensions.broad_try_clause,pylint.extensions.emptystring,pylint.extensions.comparetozero,pylint.extensions.confusing_elif,pylint.extensions.mccabe,pylint.extensions.check_elif,pylint.extensions.redefined_variable_type,pylint.extensions.overlapping_exceptions,pylint.extensions.docparams,pylint.extensions.empty_comment,pylint.extensions.typing
 
 [MESSAGES CONTROL]
 
@@ -74,7 +74,7 @@ reports=yes
 # respectivly contain the number of errors / warnings messages and the total
 # number of statements analyzed. This is used by the global evaluation report
 # (R0004).
-evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10)
+evaluation=max(10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10),0)
 
 # Add a comment according to your evaluation note. This is used by the global
 # evaluation report (R0004).
