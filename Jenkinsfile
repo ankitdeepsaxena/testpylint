@@ -25,6 +25,7 @@ pipeline {
                 #pylint --output-format=colorized
                 #pylint --output-format=parseable --reports=no module > pylint.log || echo "pylint exited with")
                 echo 'pylint command 1 executed'
+                python3 -m pylint --fail-under=7.0 /var/lib/jenkins/workspace/pylint/files/*py
                 """
             }
             
