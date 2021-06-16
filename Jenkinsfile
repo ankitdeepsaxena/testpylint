@@ -19,8 +19,14 @@ pipeline {
         }
         stage("Pytest") {
         steps {
-            sh 'pip3 install pytest'
-            sh 'python3 -m pytest --version'
+            sh """
+            pip3 install pytest
+            python3 -m pytest --version
+            pip3 install coverage
+            pytest /var/lib/jenkins/workspace/pylint/tests/*
+            coverage run -m pytest /var/lib/jenkins/workspace/pylint/tests/*
+            coverage report -m
+            """
             }
         }
         stage('Build') {
