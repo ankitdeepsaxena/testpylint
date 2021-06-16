@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh """
                 echo 'Checkout Done'
-                pylint /var/lib/jenkins/workspace/pylint@Script/DAGS/*.py || exit 0
+                pylint /var/lib/jenkins/workspace/pylint@script/DAGS/*.py || exit 0
                 #pylint --output-format=colorized
                 #pylint --output-format=parseable --reports=no module > pylint.log || echo "pylint exited with")
                 echo 'pylint command 1 executed'
