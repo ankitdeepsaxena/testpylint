@@ -42,7 +42,7 @@ pipeline {
         }
         stage ('CleanUp'){
             steps{
-            echo "We are done"
+            echo "We are dones"
             }
         }
     }
