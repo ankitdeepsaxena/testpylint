@@ -16,7 +16,7 @@ pipeline {
                 ls /var/lib/jenkins/workspace/
                 ls /var/lib/jenkins/workspace/pylint/
                 ls /var/lib/jenkins/workspace/pylint/files/
-                python3 -m pylint /var/lib/jenkins/workspace/pylint/files/*py || exit 0
+                #python3 -m pylint /var/lib/jenkins/workspace/pylint/files/*py || exit 0
                 #pylint --output-format=colorized
                 #pylint --output-format=parseable --reports=no module > pylint.log || echo "pylint exited with")
                 echo 'pylint command 1 executed'
