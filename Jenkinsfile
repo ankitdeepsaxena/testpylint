@@ -22,7 +22,7 @@ pipeline {
             sh """
             pip3 install pytest &> /dev/null
             python3 -m pytest --version
-            pip3 install coverage
+            pip3 install coverage &> /dev/null
             python3 -m coverage --version
             python3 -m pytest /var/lib/jenkins/workspace/pylint/tests/*
             python3 -m coverage run -m pytest /var/lib/jenkins/workspace/pylint/tests/test_*.py
