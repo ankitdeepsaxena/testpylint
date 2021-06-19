@@ -37,7 +37,7 @@ pipeline {
                     echo "currentResult: ${currentBuild.currentResult}"
                     sh """#!/usr/bin/env bash
                             set -e
-                            echo 'I AM STAGE TWO AND I SHOULD NOT BE EXECUTED'
+                            echo 'I AM STAGE TWO AND I SHOULD  BE EXECUTED'
                             """
                 }
             }
