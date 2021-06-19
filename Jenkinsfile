@@ -14,6 +14,7 @@ pipeline {
                 pip3 install pylint &> /dev/null
                 python3 -m pylint --version
                 python3 -m pylint --fail-under=4.0 --output=/var/lib/jenkins/workspace/pylint/pylint.log --output-format=colorized --score=y /var/lib/jenkins/workspace/pylint/files/*py
+                cat /var/lib/jenkins/workspace/pylint/pylint.log
                 """
             }            
         }
