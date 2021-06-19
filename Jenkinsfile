@@ -11,16 +11,16 @@ pipeline {
             steps {
                 sh """
                 echo 'Checkout Done'
-                pip3 install pylint
+                pip3 install pylint &> /dev/null
                 python3 -m pylint --version
-                python3 -m pylint --fail-under=4.0 --output=/var/lib/jenkins/workspace/pylint/re.txt --output-format=colorized --score=y /var/lib/jenkins/workspace/pylint/files/*py
+                python3 -m pylint --fail-under=4.0 --output=/var/lib/jenkins/workspace/pylint/pylint.log --output-format=colorized --score=y /var/lib/jenkins/workspace/pylint/files/*py
                 """
             }            
         }
         stage("Pytest") {
         steps {
             sh """
-            pip3 install pytest
+            pip3 install pytest &> /dev/null
             python3 -m pytest --version
             pip3 install coverage
             python3 -m coverage --version
