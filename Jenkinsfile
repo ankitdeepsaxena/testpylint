@@ -20,7 +20,7 @@ pipeline {
         stage("Pytest") {
         steps {
             sh """
-            pip3 install pytest
+            pip3 install pytest &> /dev/null
             python3 -m pytest --version
             pip3 install coverage
             python3 -m coverage --version
