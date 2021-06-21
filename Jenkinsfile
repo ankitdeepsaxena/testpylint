@@ -25,7 +25,7 @@ pipeline {
             python3 -m pytest --version
             pip3 install coverage
             python3 -m coverage --version
-            python3 -m coverage run --source=/var/lib/jenkins/workspace/pylint/ -m pytest /var/lib/jenkins/workspace/pylint/tests/
+            python3 -m coverage run --source=/var/lib/jenkins/workspace/pylint/files/ -m pytest /var/lib/jenkins/workspace/pylint/tests/
             python3 -m coverage report -i
             python3 -m coverage report -m
             #coverage report -i
