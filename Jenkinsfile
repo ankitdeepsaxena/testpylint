@@ -28,6 +28,7 @@ pipeline {
             python3 -m pytest /var/lib/jenkins/workspace/pylint/tests/*
             python3 -m coverage run -m pytest /var/lib/jenkins/workspace/pylint/tests/test_*.py
             python3 -m coverage report -i
+            python3 -m coverage report -m
             #coverage report -i
             """
             }
